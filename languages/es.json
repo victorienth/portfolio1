@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "name": "Victorien THOMAS",
+    "lead": "Estudiante de ingeniería aeroespacial en IPSA. Apasionado por el espacio, el desarrollo y la innovación tecnológica."
+  },
+  "about": {
+    "title": "Sobre mí",
+    "text": "Actualmente en el segundo año en IPSA París, especializado en sistemas aeroespaciales. Curioso y motivado, deseo aplicar mis habilidades en modelado 3D, programación y diseño en proyectos innovadores."
+  },
+  "experience": {
+    "title": "Experiencias",
+    "esa": "ESA – Prácticas de ingeniería (2024)",
+    "esaDesc": "Modelado 3D de un satélite y estructuras OPD.",
+    "ipsaF1": "IPSA F1 – Asociación (2024–)",
+    "ipsaF1Desc1": "Tesorero y responsable del equipo de construcción/diseño.",
+    "ipsaF1Desc2": "Toma de decisiones, gestión de equipo, presupuesto.",
+    "schneider": "Schneider Electric – Trabajo de estudiante (2023)",
+    "schneiderDesc": "Trabajo en equipo, procesos de calidad e innovación en un entorno industrial.",
+    "meteo": "Météo-France – Prácticas (2019)",
+    "meteoDesc": "Inmersión en meteorología y análisis de sistemas de previsión."
+  },
+  "education": {
+    "title": "Formación",
+    "ipsa": "IPSA – Escuela de ingeniería aeronáutica y espacial (2022–)",
+    "lycee": "Lycée Lamartine – Bachillerato general, especialidades Matemáticas y Física (2019–2022)"
+  },
+  "skills": {
+    "title": "Competencias",
+    "techniques": "Técnicas",
+    "languages": "Idiomas",
+    "techList1": "Modelado 3D: Blender, Catia, Creo",
+    "techList2": "Programación: Python, C/C++, VHDL, Arduino",
+    "langList1": "Francés — nativo",
+    "langList2": "Inglés — B2 (TOEIC 830)",
+    "langList3": "Español — B2"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "esa": "Orbital Propellant Depot",
+    "esaDesc1": "Creación de un modelo 3D de un OPD (depósito orbital de propulsante), un satélite de reabastecimiento para prolongar la vida de las misiones. Objetivo: repostaje en órbita y nuevas posibilidades de exploración.",
+    "esaDesc2": "Modelado con Catia para precisión y detalle; renders y texturas realistas en Blender para visualizar el resultado final y escenarios.",
+    "ipsaF1": "IPSA F1",
+    "ipsaF1Desc1": "Proyecto estudiantil: simulador de Fórmula 1 sobre actuadores. En fase de prototipo, combinando modelado, diseño mecánico y electrónica.",
+    "ipsaF1Desc2": "Chasis de madera para validar simulaciones y esfuerzos. Modelado 3D en Catia, vídeos en Blender y volante a medida. Arduino controla los actuadores.",
+    "aeroport": "Aeropuerto verde",
+    "aeroportDesc1": "Proyecto académico para transformar un aeropuerto existente y acercarlo a la neutralidad de carbono. La aviación supone ~5% de las emisiones globales; la innovación es clave.",
+    "aeroportDesc2": "Análisis de infraestructuras actuales e integración de energías renovables y tecnologías futuras para reducir el consumo y avanzar hacia un aeropuerto sostenible.",
+    "aeroportCta": "Leer el informe"
+  },
+  "contact": {
+    "title": "Contacto",
+    "send": "Enviar",
+    "alt": "O mándame un correo directamente",
+    "email": "Email",
+    "phone": "Teléfono",
+    "linkedin": "LinkedIn",
+    "cv": "CV",
+    "formName": "Nombre",
+    "formEmail": "Email",
+    "formMessage": "Mensaje",
+    "formActionHint": "https://formspree.io/f/TON_ID"
+  }
+}
