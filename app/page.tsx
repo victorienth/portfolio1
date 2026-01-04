@@ -67,7 +67,6 @@ export default function Page() {
             <img src="/moi.jpg" alt={t("hero.name")} />
           </div>
           <div style={{ flex: "1 1 360px" }}>
-            <span className="small">{t("hero.status")}</span>
             <h1><span style={{ color: "var(--accent)" }}>{t("hero.name")}</span></h1>
             <p className="lead">{t("hero.lead")}</p>
             <div className="socials">
