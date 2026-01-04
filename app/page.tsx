@@ -7,7 +7,6 @@ import fr from "./languages/fr.json";
 import en from "./languages/en.json";
 import es from "./languages/es.json";
 
-
 type Lang = "fr" | "en" | "es";
 
 /** Dictionnaire générique profondément imbriqué */
