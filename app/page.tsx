@@ -87,8 +87,6 @@ export default function Page() {
           </div>
 
           <div style={{ flex: "1 1 360px" }}>
-            {/* N'affiche pas le status si vide */}
-            {t("hero.status") ? <span className="small">{t("hero.status")}</span> : null}
 
             <h1>
               <span style={{ color: "var(--accent)" }}>{t("hero.name")}</span>
@@ -172,10 +170,6 @@ export default function Page() {
                 linkedin.com/in/victorien-thomas
               </a>
 
-              {/* CV dans la carte contact aussi (si tu veux) */}
-              <a className="btn" href={cvHref} target="_blank" rel="noreferrer" download={cvDownloadName}>
-                {t("contact.cv")}
-              </a>
             </div>
           </div>
         </div>
