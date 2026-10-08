@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Victorien Thomas, ingénieur aérospatial</title>
+  <meta name="description" content="Étudiant ingénieur en double diplôme IPSA et UPC. Simulation de systèmes spatiaux et communications optiques par satellite." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Victorien THOMAS, ingénieur aérospatial" />
+  <meta property="og:description" content="Étudiant ingénieur en double diplôme IPSA et UPC. Simulation de systèmes spatiaux et communications optiques par satellite. Je cherche une thèse dans le spatial." />
+  <!-- Une fois le site en ligne, remplacer par l'adresse complète de l'image (ex. https://monsite.fr/images/moi.jpg) -->
+  <meta property="og:image" content="images/moi.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="progress" id="progress" aria-hidden="true"></div>
+    <div class="container header__inner">
+      <a class="header__name" href="#top">Victorien THOMAS</a>
+      <nav class="header__nav" aria-label="Navigation">
+        <a href="#projects" data-i18n="nav.projects"></a>
+        <a href="#path" data-i18n="nav.path"></a>
+        <a href="#skills" data-i18n="nav.skills"></a>
+        <a href="#contact" data-i18n="nav.contact"></a>
+      </nav>
+      <div class="lang" role="group">
+        <button type="button" data-lang="fr">FR</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. Intro animée -->
+    <div class="hero-wrap">
+      <!-- Fond animé : dégradés + champ orbital (bg.js) -->
+      <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+      <canvas class="field" id="field" aria-hidden="true"></canvas>
+      <div class="hero container hero--split hero--intro" id="hero">
+        <div class="hero__text" id="hero-text"></div>
+        <div class="hero__visual" id="hero-visual"></div>
+      </div>
+    </div>
+
+    <!-- 2. Ce que je cherche -->
+    <section id="phd" class="section section--tinted section--compact"><div class="container"></div></section>
+
+    <!-- 3. Projets : stage de recherche mis en avant, puis les autres projets -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <!-- Halos de couleur derrière les projets, comme sur l'intro -->
+      <div class="aurora aurora--soft" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container">
+        <div class="section__head" id="projects-head"></div>
+
+        <article class="featured" id="featured">
+          <div id="featured-text"></div>
+
+          <div class="feature__cols" id="featured-cols"></div>
+        </article>
+
+        <div id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- 4. Parcours -->
+    <section id="path" class="section section--tinted"><div class="container"></div></section>
+
+    <!-- 5. Compétences -->
+    <section id="skills" class="section"><div class="container"></div></section>
+
+    <!-- 6. Contact -->
+    <section id="contact" class="section section--tinted"><div class="container"></div></section>
+  </main>
+
+  <footer class="footer"><div class="container" id="footer"></div></footer>
+
+  <script src="content.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="bg.js"></script>
+  <script src="globe.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
