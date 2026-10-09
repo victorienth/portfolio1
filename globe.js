@@ -163,8 +163,12 @@ function createGlobe(host) {
   let visible = true;
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(host);
 
+  // Compile tous les shaders tout de suite (sinon la première image fige la page).
+  renderer.compile(scene, camera);
+
   const tmpA = new THREE.Vector3(), tmpB = new THREE.Vector3();
-  let t = 0, last = performance.now(), intro = 0;
+  let t = 0, last = performance.now(), intro = 0, started = false;
+  host.startGlobe = () => { started = true; last = performance.now(); };
 
   function frame(now) {
     const dt = Math.min(0.05, (now - last) / 1000);
@@ -172,7 +176,7 @@ function createGlobe(host) {
     if (!reduceMotion) t += dt;
 
     // Apparition : le globe grossit en douceur.
-    intro = Math.min(1, intro + dt * 0.8);
+    if (started) intro = Math.min(1, intro + dt * 0.8);
     const s = reduceMotion ? 1 : 0.6 + 0.4 * (1 - Math.pow(1 - intro, 3));
     tilt.scale.setScalar(s);
 

@@ -725,3 +725,11 @@ a:focus-visible, button:focus-visible {
 }
 @keyframes pop-in-down { from { opacity: 0; transform: translateY(-6px) scale(.96); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .cv-bubble__pop { animation: none; } }
+
+/* Intro en attente tant que la page n'est pas prête (voir startIntro dans main.js). */
+.hero--intro:not(.is-ready) .reveal,
+.hero--intro:not(.is-ready) .letter,
+.hero--intro:not(.is-ready) .orbit,
+.hero--intro:not(.is-ready) .orbit__earth { animation-play-state: paused; }
+.hero--intro .hero__visual { opacity: 0; transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+.hero--intro.is-ready .hero__visual { opacity: 1; }

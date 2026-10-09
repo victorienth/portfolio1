@@ -127,7 +127,7 @@ const MESSAGES = {
         {
           "title": "Atterrissage vertical d'un microlanceur réutilisable",
           "context": "IPSA et CNES, 2026",
-          "image": "images/launch.png",
+          "image": "images/launch.jpg",
           "text": "Éco-conception du système d'atterrissage de SIRIUS 2, un microlanceur réutilisable qui doit se poser 20 fois sur une barge au large de Kourou. Notre solution associe des pétales de freinage aérodynamique à quatre jambes déployables, validées par une simulation par éléments finis et une analyse du cycle de vie.",
           "tools": [],
           "category": "academic",
@@ -188,7 +188,7 @@ const MESSAGES = {
         "category": "internship",
         "title": "Propagation d'un faisceau laser dans l'atmosphère",
         "context": "Stage de recherche, NCSR « Demokritos », Athènes, Grèce, 2026",
-        "image": "images/sat.png",
+        "image": "images/sat.jpg",
         "paragraphs": [
           "Quand un laser traverse l'atmosphère, il est diffusé, absorbé et déformé par la turbulence. Seule une partie de la puissance émise atteint la cible. J'ai simulé ces effets pour sept longueurs d'onde, de l'UV (360 nm) au laser CO₂ (10,6 µm), sur 1 km, 6 km et jusqu'à 100 km d'altitude, afin de déterminer le laser le plus adapté aux télécommunications optiques et à l'échauffement d'une cible à distance."
         ],
@@ -432,7 +432,7 @@ const MESSAGES = {
         {
           "title": "Vertical landing of a reusable microlauncher",
           "context": "IPSA and CNES, 2026",
-          "image": "images/launch.png",
+          "image": "images/launch.jpg",
           "text": "Eco-design of the landing system for SIRIUS 2, a reusable microlauncher that must land 20 times on a barge off Kourou. Our solution combines aerodynamic braking petals with four deployable legs, validated by finite element simulation and a life cycle assessment.",
           "tools": [],
           "category": "academic",
@@ -493,7 +493,7 @@ const MESSAGES = {
         "category": "internship",
         "title": "Laser beam propagation through the atmosphere",
         "context": "Research internship, NCSR \"Demokritos\", Athens, Greece, 2026",
-        "image": "images/sat.png",
+        "image": "images/sat.jpg",
         "paragraphs": [
           "When a laser travels through the atmosphere, it is scattered, absorbed and distorted by turbulence. Only part of the emitted power reaches the target. I simulated these effects for seven wavelengths, from UV (360 nm) to the CO₂ laser (10.6 µm), over 1 km, 6 km and up to 100 km altitude, to determine which laser is best suited to optical telecommunications and to heating a distant target."
         ],
@@ -737,7 +737,7 @@ const MESSAGES = {
         {
           "title": "Aterrizaje vertical de un microlanzador reutilizable",
           "context": "IPSA y CNES, 2026",
-          "image": "images/launch.png",
+          "image": "images/launch.jpg",
           "text": "Ecodiseño del sistema de aterrizaje de SIRIUS 2, un microlanzador reutilizable que debe posarse 20 veces en una barcaza frente a Kourou. Nuestra solución combina pétalos de frenado aerodinámico con cuatro patas desplegables, validadas mediante una simulación por elementos finitos y un análisis del ciclo de vida.",
           "tools": [],
           "category": "academic",
@@ -798,7 +798,7 @@ const MESSAGES = {
         "category": "internship",
         "title": "Propagación de un haz láser en la atmósfera",
         "context": "Prácticas de investigación, NCSR «Demokritos», Atenas, Grecia, 2026",
-        "image": "images/sat.png",
+        "image": "images/sat.jpg",
         "paragraphs": [
           "Cuando un láser atraviesa la atmósfera, se dispersa, se absorbe y la turbulencia lo deforma. Solo una parte de la potencia emitida llega al objetivo. Simulé estos efectos para siete longitudes de onda, del UV (360 nm) al láser de CO₂ (10,6 µm), a 1 km, 6 km y hasta 100 km de altitud, para determinar el láser más adecuado para las telecomunicaciones ópticas y para calentar un objetivo a distancia."
         ],

@@ -123,7 +123,7 @@ function renderProjects(t) {
     <h3 class="feature__heading words">${splitWords(f.title)}</h3>
     <p class="muted">${esc(f.context)}</p>
     ${f.tools && f.tools.length ? `<ul class="tags tags--small featured__tools">${f.tools.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
-    ${f.image ? `<figure class="featured__media"><img src="${f.image}" alt="${esc(f.title)}" loading="lazy"></figure>` : ""}`;
+    ${f.image ? `<figure class="featured__media"><img src="${f.image}" alt="${esc(f.title)}" loading="lazy" decoding="async"></figure>` : ""}`;
   $("#featured-cols").innerHTML = `
     <div class="stack">${f.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
     <div>
@@ -137,7 +137,7 @@ function renderProjects(t) {
     <div class="projects${items.length % 2 === 1 ? " projects--featured" : ""}">
       ${items.map((p, i) => `
         <article class="project enter" style="--i:${i}">
-          ${p.image ? `<div class="project__media"><img src="${p.image}" alt="" loading="lazy"></div>` : ""}
+          ${p.image ? `<div class="project__media"><img src="${p.image}" alt="" loading="lazy" decoding="async"></div>` : ""}
           <div class="project__body">
             <div class="card__label">${p.logo ? `<img class="org-logo" src="${p.logo}" alt="">` : ""}<p class="featured__tag">${esc(P.categories[p.category])}</p></div>
             <h3>${esc(p.title)}</h3>
@@ -171,7 +171,7 @@ function renderPath(t) {
           <div class="timeline__period">${esc(it.period)}</div>
           <div class="timeline__body">
             <div class="timeline__head">
-              <span class="logo" aria-hidden="true">${esc(it.short || "")}${it.logo ? `<img src="${it.logo}" alt="" loading="lazy">` : ""}</span>
+              <span class="logo" aria-hidden="true">${esc(it.short || "")}${it.logo ? `<img src="${it.logo}" alt="" loading="lazy" decoding="async">` : ""}</span>
               <div>
                 <p class="timeline__type">${esc(it.type === "study" ? t.path.study : t.path.work)}</p>
                 <h3>${esc(it.title)}</h3>
@@ -374,8 +374,20 @@ if (!reduceMotion) {
 createOrbitalField($("#field"));
 if (!createGlobe($("#hero-visual"))) $("#hero-visual").innerHTML = ORBIT;
 
-// Après l'intro, on retire la classe pour que les changements de langue ne rejouent pas l'animation.
-setTimeout(() => $("#hero").classList.remove("hero--intro"), 2200);
+// L'intro ne démarre qu'une fois la police chargée et le globe prêt : tout le travail lourd
+// (compilation WebGL, mise en page) est fait avant, donc l'animation ne fige plus.
+function startIntro() {
+  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+  const timeout = new Promise((r) => setTimeout(r, 1200));
+  Promise.race([fonts, timeout]).then(() =>
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      $("#hero").classList.add("is-ready");
+      $("#hero-visual").startGlobe?.();
+      // Après l'intro, on retire la classe pour que les changements de langue ne rejouent pas l'animation.
+      setTimeout(() => $("#hero").classList.remove("hero--intro"), 2200);
+    }))
+  );
+}
 
 // ----- Navigation : section active et ombre de l'en-tête -----
 
@@ -411,6 +423,7 @@ document.querySelectorAll(".lang button").forEach((b) =>
   })
 );
 render(initialLang());
+startIntro();
 
 // ----- Bulle de choix de la langue du CV -----
 function closeCvBubble() {
