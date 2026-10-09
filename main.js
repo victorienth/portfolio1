@@ -109,7 +109,7 @@ function renderProjects(t) {
     ${chips(Object.entries(P.categories).map(([value, label]) => ({ value, label })), state.category, P.filter)}`;
   $("#projects-head .chips").addEventListener("click", (e) => {
     const v = e.target.closest(".chip")?.dataset.value;
-    if (v) { state.category = v; renderProjects(MESSAGES[state.lang]); }
+    if (v) { state.category = v; renderProjects(MESSAGES[state.lang]); bindEffects(); }
   });
 
   // Stage de recherche mis en avant.
@@ -185,7 +185,7 @@ function renderPath(t) {
   $("#path").setAttribute("aria-labelledby", "path-title");
   $("#path .chips").addEventListener("click", (e) => {
     const v = e.target.closest(".chip")?.dataset.value;
-    if (v) { state.pathFilter = v; renderPath(MESSAGES[state.lang]); }
+    if (v) { state.pathFilter = v; renderPath(MESSAGES[state.lang]); bindEffects(); }
   });
 }
 
