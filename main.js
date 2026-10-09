@@ -372,19 +372,36 @@ if (!reduceMotion) {
 }
 
 createOrbitalField($("#field"));
-if (!createGlobe($("#hero-visual"))) $("#hero-visual").innerHTML = ORBIT;
+
+// three.js (600 Ko) est chargé en parallèle : le texte n'attend plus le globe pour s'afficher.
+const globeReady = new Promise((resolve) => {
+  const s = document.createElement("script");
+  s.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+  s.onload = () => resolve(createGlobe($("#hero-visual")));
+  s.onerror = () => resolve(false);
+  document.head.appendChild(s);
+}).then((ok) => {
+  if (!ok) $("#hero-visual").innerHTML = ORBIT;
+  return ok;
+});
 
 // L'intro ne démarre qu'une fois la police chargée et le globe prêt : tout le travail lourd
 // (compilation WebGL, mise en page) est fait avant, donc l'animation ne fige plus.
 function startIntro() {
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
-  const timeout = new Promise((r) => setTimeout(r, 1200));
-  Promise.race([fonts, timeout]).then(() =>
+  // Police : 800 ms max. Globe : on l'attend 900 ms max, sinon il apparaîtra en fondu dès qu'il est prêt.
+  const ready = Promise.all([Promise.race([fonts, wait(800)]), Promise.race([globeReady, wait(900)])]);
+  ready.then(() =>
     requestAnimationFrame(() => requestAnimationFrame(() => {
       $("#hero").classList.add("is-ready");
-      $("#hero-visual").startGlobe?.();
       // Après l'intro, on retire la classe pour que les changements de langue ne rejouent pas l'animation.
       setTimeout(() => $("#hero").classList.remove("hero--intro"), 2200);
+      // Le globe apparaît en fondu dès qu'il est prêt, sans bloquer le texte.
+      globeReady.then(() => {
+        $("#hero-visual").classList.add("is-on");
+        $("#hero-visual").startGlobe?.();
+      });
     }))
   );
 }

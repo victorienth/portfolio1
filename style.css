@@ -731,5 +731,5 @@ a:focus-visible, button:focus-visible {
 .hero--intro:not(.is-ready) .letter,
 .hero--intro:not(.is-ready) .orbit,
 .hero--intro:not(.is-ready) .orbit__earth { animation-play-state: paused; }
-.hero--intro .hero__visual { opacity: 0; transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
-.hero--intro.is-ready .hero__visual { opacity: 1; }
+.hero__visual { opacity: 0; transition: opacity .8s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+.hero__visual.is-on { opacity: 1; }
